@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car repair studio</title>
+    <link rel="stylesheet" href="style/css.css">
+    <link rel="stylesheet" href="style/cssMobile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Спливаюче вікно з повідомленням про успішну відправку форми -->
+    <div class="sending-overlay hidden">
+        <div class="modal">
+            <h2>Дякуємо!</h2>
+            <p>Наші менеджери зв'яжуться з вами.</p>
+            <button class="close-btn button-style">OK</button>
+        </div>
+    </div>
+    <section class="Title-screen">
+        <section class="background-image"><img src="images/Background.png" alt=""></section>
+        <section class="container container-mobile">
+                    
+                <header>
+                    <div class="hamburger-dropdown-mobile" id="hamburger-dropdown-mobile">
+                        <a href="#" data-target="Title-screen">Головна</a>
+                        <a href="#" data-target="services-screen">Послуги</a>
+                        <a href="#" data-target="complex-services-screen">Комплексні послуги</a>
+                        <a href="#" data-target="gallery-screen">Галерея</a>
+                        <a href="#" data-target="reviews-screen">Відгуки</a>
+                        <a href="#" data-target="contacts">Контакти</a>
+                        <div class="cross">
+                            <svg width="30px" height="30px" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 20L4 4.00003M20 4L4.00002 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>    
+                    <nav>
+                        <div class="box1"><img class="logo" src="images/logo.png"></div>
+                        <div class="nav-right">
+                        <div class="box3">
+                            <svg class="location-button" width="36" height="36" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" fill="white"/></svg>
+                            <div id="hamburger-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="hamburger-dropdown" id="hamburger-dropdown">
+                                <a href="#" data-target="Title-screen">Головна</a>
+                                <a href="#" data-target="services-screen">Послуги</a>
+                                <a href="#" data-target="complex-services-screen">Комплексні послуги</a>
+                                <a href="#" data-target="gallery-screen">Галерея</a>
+                                <a href="#" data-target="reviews-screen">Відгуки</a>
+                                <a href="#" data-target="contacts">Контакти</a>
+                            </div>
+                        </div>
+                        <div class="box4"><button class="header-button button-style">Послуги</button></div>
+                        </div>
+                    </nav>
+                </header>
+                    <div class="title-screen-text">
+                        <p class="text1 floating">Керовані <span class="bold-font">Дизайном</span></p>
+                        <p class="text2 floating">Студія <span class="bold-font">Автомобільного Рестайлінгу</span></p>
+                        <!-- <p class="side-text floating">Сервіс <span class="bold-font">Ремонту</span></p> -->
+                    </div>
+                    <div class="registration">
+                    <div class="registration-inputs">
+                        <input type="text" placeholder="Ім'я" class="search name">
+                        <input type="tel" placeholder="Телефон" class="search phone">
+                        <input type="email" placeholder="Пошта" class="search email">
+                        <input type="text" placeholder="Рік народження" class="search birth-year">
+                    </div>
+                    <div class="registration-buttons">
+                        <button class="submit-button button-style">Підтвердити</button>
+                    </div>
+        </section>
+    </section>
+        <section class="container services-screen">
+            <p class="services-screen-text">Наші <span class="bold-font">Послуги</span></p>
+            <div class="background-block first"></div>
+            <img src="images/background image.jpg" alt="buttons meaning" class="background-block-image">
+            <article class="services-screen-rectangles">
+                <div class="rectangle1"></div>    
+                <div class="rectangle2"></div>    
+            </article>
+            <section class="services-screen-content">
+                <div class="services-screen-block">
+                    <p class="services-screen-block-text1">Виберіть послугу</p>
+                    <p class="services-screen-block-text2">Ознайомтесь із нашими послугами — оберіть одну, щоб дізнатись більше</p>
+                    <div class="button-container"><button class="services-screen-block-button"><span class="inner">Записатися</span></button></div>
+
+                </div>
+                <div class="services-screen-buttons">
+                    <button id="services-screen-button-1" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Плівкове обклеювання</span><p class="services-description first"></p></button>
+                    <button id="services-screen-button-2" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Тонування вікон</span><p class="services-description second"></p></button>
+                    <button id="services-screen-button-3" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Захисна плівка для фарби</span><p class="services-description third"></p></button>
+                    <button id="services-screen-button-4" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Детейлінг авто</span><p class="services-description fourth"></p></button>
+                    <button id="services-screen-button-5" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Порошкове фарбування</span><p class="services-description fifth"></p></button>
+                    <button id="services-screen-button-6" class="services-screen-button"><span class="services-button-text"><div class="round"></div>Фарбування гальмівних підтримувачів</span><p class="services-description sixth"></p></button>
+                </div>
+            </section>
+        </section>
+
+    <section class="container complex-services-screen">
+        <p class="text1">Комплексні <span class="bold-font">Послуги</span></p>
+        <div class="complex-services-screen-blocks">
+            <div class="complex-services-screen-block">
+                <div class="complex-services-screen-block-wrapper">
+                    <img src="images/Third Screen/tint.png" alt="">
+                    <div class="services-line"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="overlay-content">
+                    <div class="overlay-text"><a href="#" target="_blank" rel="noopener noreferrer">Детальніше</a></div>
+                    <div class="vertical-line"></div>
+                </div>
+                <p class="text2">Тонування <span class="bold-font">Вікон</span></p>
+            </div>
+
+            <div class="complex-services-screen-block">
+                <div class="complex-services-screen-block-wrapper">
+                    <div class="services-line"></div>
+                    <img src="images/Third Screen/covering.png" alt="">
+                    
+                </div>
+                <p class="text2">Плівкове <span class="bold-font">Покриття</span></p>
+                <div class="overlay"></div>
+                <div class="overlay-content">
+                    <div class="overlay-text"><a href="#" target="_blank" rel="noopener noreferrer">Детальніше</a></div>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+
+            <div class="complex-services-screen-block">
+                <div class="complex-services-screen-block-wrapper">
+                    <img src="images/Third Screen/painting.png" alt="">
+                    <div class="services-line"></div>
+                </div>
+                <p class="text2">Порошкове <span class="bold-font">Фарбування</span></p>
+                <div class="overlay"></div>
+                <div class="overlay-content">
+                    <div class="overlay-text"><a href="#" target="_blank" rel="noopener noreferrer">Детальніше</a></div>
+                    <div class="vertical-line"></div>
+                </div>
+            </div>
+        </div>
+        <button class="set-reminder-button">Поставити нагадування</button>
+    </section>
+    <!-- accessories screen -->
+    <section class="container accessories-screen">
+        <p class="accessories-screen-text1">ВСТАНОВЛЕННЯ </p>
+        <p class="accessories-screen-text2"><span class="bold-font text1 accessories">АКСЕСУАРІВ</span></p>
+        <img class="accessories-screen-image" src="images/fourth screen picture.png" alt="Встановлення аксесуарів">
+
+            <div class="accessories-button" id="bumper">
+                <span class="loader"></span>
+            </div>
+            <div class="accessories-button" id="wheel-arch">
+                <span class="loader"></span>
+            </div>
+            <div class="accessories-button" id="door-handle">
+                <span class="loader"></span>
+            </div>
+            <div class="accessories-button" id="window">
+                <span class="loader"></span>
+            </div>
+            <div class="accessories-button" id="headlights">
+                <span class="loader"></span>
+            </div>
+            
+            
+
+    </section>
+        <!-- GALLERY SCREEN -->
+    <section class="container gallery-screen container-mobile">
+        <p class="text1 gallery-screen-title">Наша <span class="bold-font">Галерея</span></p>
+        <div class="background-block second"></div>
+        <div class="gallery-slider">
+            <button class="gallery-btn gallery-btn-prev"><svg class="gallery-arrow" viewBox="0 0 24 24"><path d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z" /></svg></button>
+            <div class="gallery-viewport">
+                <div class="gallery-slide active"><img src="images/Slider/slider1.png" alt="Slider 1"></div>
+                <div class="gallery-slide"><img src="images/Slider/slider2.png" alt="Slider 2"></div>
+                <div class="gallery-slide"><img src="images/Slider/slider3.png" alt="Slider 3"></div>
+            </div>
+            <button class="gallery-btn gallery-btn-next"><svg class="gallery-arrow" viewBox="0 0 24 24"><path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" /></svg></button>
+        </div>
+    </section>
+    <img class="asphalt-background" src="images/asphalt-texture-background.png" alt="">
+
+<section class="container reviews-screen">
+    <p class="reviews-title">Відгуки <span class="bold-font">клієнтів</span></p>
+    <div class="review-container">
+        <div class="review"></div>        
+        <div class="review-profile-image"></div>
+    </div>
+</section> 
+    <!-- CONTACTS SCREEN -->
+<section class="contacts" data-target="Contacts">
+    <div class="container container-mobile">
+    <div class="contacts-content">
+        <div class="contacts-info-block">
+            <h2 class="contacts-title">Зв'язатися з нами</h2>
+            <div class="contacts-details">
+                <div class="contacts-detail-group">
+                    <p class="contacts-label">Адреса:</p>
+                    <p class="contacts-value">м. Нью-Йорк 12</p>
+                </div>
+                <div class="contacts-detail-group">
+                    <p class="contacts-label">Час роботи:</p>
+                    <p class="contacts-value">8:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="contacts-socials">
+                <a href="#" class="social-icon" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <img class="contacts-map" src="images/location.png" alt="Карта">
+    <div class="footer-rectangles-bg"></div>
+    <!-- FOOTER -->
+    <footer class="contacts-footer">
+        <div class="footer-logo">
+            <img src="images/logo.png" alt="Automotive Care Logo">
+        </div>
+        <p class="footer-rights">Всі права захищені</p>
+    </footer>
+    </div>
+</section>
+    <script type="module">
+        import Inputmask from "https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.es6.js";
+        const im = new Inputmask("+380 (99) 999-99-99");
+        im.mask(document.querySelector(".phone"));
+    </script>
+    <script type="module" src="Javascript/script.js"></script>
+</body>
+</html>
