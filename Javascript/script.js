@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import {observer} from "./animations.js";
 import {services} from "./services.js";
 import {checkEmail, checkName, checkBirthYear} from "./dataChecks.js";
@@ -798,4 +798,3 @@ document
 
 // REVIEWS SCREEN
 renderReviews();
->>>>>>> 8f1b5cabb40136640e7eca2d1d1035c976f0056b
