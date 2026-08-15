@@ -2,6 +2,7 @@ import {observer} from "./animations.js";
 import {services} from "./services.js";
 import {checkEmail, checkName, checkBirthYear} from "./dataChecks.js";
 import {renderRating, reviews} from "./reviews.js";
+import Inputmask from "https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.es6.js";
 
 const button = document.querySelector('.header-button');
 const servicesScreen = document.querySelector('.services-screen');
@@ -28,6 +29,8 @@ hamburger.addEventListener('click', (e) => {
         dropdownMobile.classList.toggle('open', isOpen);
     }
 });
+
+
 
 // Close when clicking anywhere outside
 document.addEventListener('click', () => {
@@ -108,15 +111,25 @@ window.addEventListener('scroll', () => {
 const submitButton = document.querySelector('.submit-button');
 const overlay = document.querySelector('.sending-overlay');
 const closeBtn = document.querySelector('.close-btn');
-
+function showModal(Title, Message) {
+    const modalTitle = document.querySelector('.modal-title');
+    const modalMessage = document.querySelector('.modal-message');
+    modalTitle.textContent = Title;
+    modalMessage.textContent = Message;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.querySelector('.modal-content').innerHTML = '';
+}
+function hideModal() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
 submitButton.addEventListener('click', function(e) {
 
     const name = document.querySelector('.name').value;
     const phone = document.querySelector('.phone').value;
     const email = document.querySelector('.email').value;
     const birthYear = document.querySelector('.birth-year').value;
-
-    const overlay = document.querySelector('.sending-overlay');
 
     localStorage.setItem('name', name);
     localStorage.setItem('phone', phone);
@@ -156,12 +169,10 @@ submitButton.addEventListener('click', function(e) {
     }
 
     // Показ overlay
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    showModal("Дякуємо!", "Наші менеджери зв'яжуться з вами.");
 });
 closeBtn.addEventListener('click', () => {
-  overlay.classList.remove('active');
-    document.body.style.overflow = '';
+  hideModal();
 });
 function loadUserData() {
     const name = localStorage.getItem('name');
@@ -454,4 +465,24 @@ window.addEventListener("resize", () => {
         renderReview(review);
         attachEvents();
     }, 200);
+});
+
+const reminderButton = document.querySelector('.set-reminder-button');
+reminderButton.addEventListener('click', () => {
+    showInputModal('Нагадування!', 'Укажіть номер телефону для нагадування.');
+});
+function showInputModal(title, message) {
+    showModal(title, message);
+    const modalContent = document.querySelector('.modal-content');
+    modalContent.innerHTML = `
+        <input type="tel" placeholder="Телефон" class="search phone modal-input">
+    `;
+    const modalInput = modalContent.querySelector('.modal-input');
+
+    const im = new Inputmask("+380 (99) 999-99-99");
+    im.mask(modalInput);
+}
+const servicesScreenBlockButton = document.querySelector('.services-screen-block-button');
+servicesScreenBlockButton.addEventListener('click', () => {
+    showInputModal('Нагадування', 'Вкажіть ваш номер телефону для запису:');
 });
