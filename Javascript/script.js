@@ -4,6 +4,11 @@ import {checkEmail, checkName, checkBirthYear} from "./dataChecks.js";
 import {renderRating, reviews} from "./reviews.js";
 import Inputmask from "https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.es6.js";
 
+emailjs.init({
+  publicKey: "QHnnKk56QY3kLIcXA",
+});
+
+
 const button = document.querySelector('.header-button');
 const servicesScreen = document.querySelector('.services-screen');
 const contactsScreen = document.querySelector('.contacts');
@@ -170,6 +175,20 @@ submitButton.addEventListener('click', function(e) {
 
     // Показ overlay
     showModal("Дякуємо!", "Наші менеджери зв'яжуться з вами.");
+
+    emailjs.send("service_ck6bpkl", "template_54dmynd", {
+        name: name,
+        phone: phone,
+        email: email,
+        message: `Рік народження: ${birthYear}`
+    })
+    .then((response) => {
+        console.log("Email sent successfully:", response);
+    })
+    .catch((error) => {
+        console.error("Error sending email:", error);
+    });
+
 });
 closeBtn.addEventListener('click', () => {
   hideModal();
