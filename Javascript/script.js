@@ -1,8 +1,21 @@
 import {observer} from "./animations.js";
 import {services} from "./services.js";
 import {checkEmail, checkName, checkBirthYear} from "./dataChecks.js";
-import {renderRating, reviews} from "./reviews.js";
+import {renderRating} from "./reviews.js";
 import Inputmask from "https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.es6.js";
+
+let reviews = [];
+
+fetch("./reviews.json")
+    .then(response => response.json())
+    .then(data => {
+        reviews = data;
+
+        reviewsLength = reviews.length;
+        renderReview(reviews);
+        attachEvents();
+    });
+
 
 emailjs.init({
   publicKey: "QHnnKk56QY3kLIcXA",
@@ -34,8 +47,6 @@ hamburger.addEventListener('click', (e) => {
         dropdownMobile.classList.toggle('open', isOpen);
     }
 });
-
-
 
 // Close when clicking anywhere outside
 document.addEventListener('click', () => {
@@ -422,66 +433,73 @@ document
     .addEventListener('click', () => changeSlide(1));
 
 // ----------Reviews-------------
-let reviewsLength = reviews.length;
-let reviewNumber = 0;
-let review = document.querySelector('.review');
+let reviewElement = document.querySelector('.review');
 let reviewProfileImage = document.querySelector('.review-profile-image');
-function renderReview(review) {
+let reviewNumber = 0;
+let reviewsLength = 0;
+function renderReview(reviews) {
+    const currentReview = reviews[reviewNumber];
+
+    
     if (window.innerWidth <= 430) {
-            review.innerHTML = `
-                <p class="review-rating"><img class="profile-icon" src="${reviews[reviewNumber].profilePicture}"> ${renderRating(reviews[reviewNumber].rating)}</p>
-                <p class="review-name">${reviews[reviewNumber].name}</p>
-                <p class="review-text">${reviews[reviewNumber].text}</p>
-                <div class="review-buttons">
-                    <button class="review-button-prev"><</button>
-                    <button class="review-button-next">></button>
-                </div>
-            `;
-            reviewProfileImage.innerHTML = `
-                <img src="${reviews[reviewNumber].profilePicture}" alt="Profile Picture">
-            `;
-        }
-     
-    else {
-            review.innerHTML = `
-                <p class="review-rating">${renderRating(reviews[reviewNumber].rating)}</p>
-                <p class="review-name">${reviews[reviewNumber].name}</p>
-                <p class="review-text">${reviews[reviewNumber].text}</p>
-                <div class="review-buttons">
-                    <button class="review-button-prev"><</button>
-                    <button class="review-button-next">></button>
-                </div>
-            `;
-            reviewProfileImage.innerHTML = `
-                <img src="${reviews[reviewNumber].profilePicture}" alt="Profile Picture">
-            `;
-        }
+        reviewElement.innerHTML = `
+            <p class="review-rating">
+                <img class="profile-icon" src="${currentReview.profilePicture}">
+                ${renderRating(currentReview.rating)}
+            </p>
+            <p class="review-name">${currentReview.name}</p>
+            <p class="review-text">${currentReview.text}</p>
+
+            <div class="review-buttons">
+                <button class="review-button-prev"><</button>
+                <button class="review-button-next">></button>
+            </div>
+        `;
+
+        reviewProfileImage.innerHTML = `
+            <img src="${currentReview.profilePicture}" alt="Profile Picture">
+        `;
+    } else {
+        reviewElement.innerHTML = `
+            <p class="review-rating">
+                ${renderRating(currentReview.rating)}
+            </p>
+            <p class="review-name">${currentReview.name}</p>
+            <p class="review-text">${currentReview.text}</p>
+
+            <div class="review-buttons">
+                <button class="review-button-prev"><</button>
+                <button class="review-button-next">></button>
+            </div>
+        `;
+
+        reviewProfileImage.innerHTML = `
+            <img src="${currentReview.profilePicture}" alt="Profile Picture">
+        `;
     }
+}
 function attachEvents() {
     document.querySelector('.review-button-prev')
         .addEventListener('click', () => {
             reviewNumber = (reviewNumber - 1 + reviewsLength) % reviewsLength;
-            renderReview(review);
+            renderReview(reviews);
             attachEvents();
         });
 
     document.querySelector('.review-button-next')
         .addEventListener('click', () => {
             reviewNumber = (reviewNumber + 1) % reviewsLength;
-            renderReview(review);
+            renderReview(reviews);
             attachEvents();
         });
 }
-
-renderReview(review);
-attachEvents();
 let resizeTimeout;
 
 window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
 
     resizeTimeout = setTimeout(() => {
-        renderReview(review);
+        renderReview(reviews);
         attachEvents();
     }, 200);
 });

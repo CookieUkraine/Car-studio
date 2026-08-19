@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Михайло",
+        "profilePicture": "images/reviews/profile pictures/user1.jpg",
+        "text": "Отримав чудовий сервіс! Все зробили швидко та професійно. Машина після роботи виглядає й працює значно краще.",
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "name": "Петро",
+        "profilePicture": "images/reviews/profile pictures/user2.avif",
+        "text": "Дуже сподобався підхід до роботи. Майстри пояснили всі деталі та виконали все без зайвих затримок.",
+        "rating": 4
+    },
+    {
+        "id": 3,
+        "name": "Андрій",
+        "profilePicture": "images/reviews/profile pictures/user3.png",
+        "text": "Якісний сервіс і адекватні ціни. Видно, що люди знають свою справу та працюють акуратно.",
+        "rating": 5
+    },
+    {
+        "id": 4,
+        "name": "Антон",
+        "profilePicture": "images/reviews/profile pictures/user4.jpg",
+        "text": "Звертався вперше й залишився повністю задоволений. Роботу виконали навіть швидше, ніж очікував.",
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "name": "Софія",
+        "profilePicture": "images/reviews/profile pictures/user5.avif",
+        "text": "Приємне обслуговування та професійний підхід. Після ремонту авто їде ідеально.",
+        "rating": 4
+    },
+    {
+        "id": 6,
+        "name": "Марія",
+        "profilePicture": "images/reviews/profile pictures/user6.avif",
+        "text": "Все чітко: запис, діагностика та ремонт без зайвих проблем. Однозначно рекомендую.",
+        "rating": 5
+    },
+    {
+        "id": 7,
+        "name": "Вадим",
+        "profilePicture": "images/reviews/profile pictures/user7.avif",
+        "text": "Дуже атмосферне місце й хороші спеціалісти. Відразу видно увагу до деталей та досвід.",
+        "rating": 4
+    },
+    {
+        "id": 8,
+        "name": "Олександр",
+        "profilePicture": "images/reviews/profile pictures/user8.avif",
+        "text": "Роботу виконали якісно та без прихованих нюансів. Тепер тільки сюди зі своїм авто.",
+        "rating": 5
+    },
+    {
+        "id": 9,
+        "name": "Анастасія",
+        "profilePicture": "images/reviews/profile pictures/user9.avif",
+        "text": "Швидко знайшли проблему та оперативно її вирішили. Залишився приємно вражений сервісом.",
+        "rating": 5
+    },
+    {
+        "id": 10,
+        "name": "Роман",
+        "profilePicture": "images/reviews/profile pictures/user10.png",
+        "text": "Команда працює професійно й відповідально. Відчувається, що для них важливий результат і клієнт.",
+        "rating": 4
+    }
+]
