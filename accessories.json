@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Бампер",
+        "searchName": "Bumper",
+        "description": "Стильний та надійний бампер для вашого автомобіля, який забезпечує додатковий захист кузова та надає йому сучасного вигляду.",
+        "image": "images/accessories/bumper.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Колісна арка",
+        "searchName": "wheel-arch",
+        "description": "Захисна колісна арка для вашого автомобіля, яка допомагає захистити кузов від бруду, каміння та можливих пошкоджень.",
+        "image": "images/accessories/wheel-arc.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Дверні ручки",
+        "searchName": "door-handle",
+        "description": "Сучасні та зручні ручки дверей для вашого автомобіля, яка поєднує практичність, надійність і стильний дизайн.",
+        "image": "images/accessories/door-handle.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Вікна",
+        "searchName": "window",
+        "description": "Якісне автомобільне вікно з акуратним дизайном, яке забезпечує комфорт, хороший огляд та захист під час поїздки.",
+        "image": "images/accessories/window.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Фари",
+        "searchName": "headlights",
+        "description": "Сучасний комплект автомобільних фар, який забезпечує яскраве освітлення дороги та покращує видимість у темний час доби.",
+        "image": "images/accessories/headlights.png"
+    }
+]

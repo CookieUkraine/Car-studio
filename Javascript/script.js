@@ -523,3 +523,55 @@ const servicesScreenBlockButton = document.querySelector('.services-screen-block
 servicesScreenBlockButton.addEventListener('click', () => {
     showInputModal('Нагадування', 'Вкажіть ваш номер телефону для запису:');
 });
+
+//--------------------------------------------ACCESSORIES OVERLAY--------------------------------------------
+let accessories = [];
+
+fetch("./accessories.json")
+    .then(response => response.json())
+    .then(data => {
+        accessories = data;
+        attachAccessoryEvents();
+    });
+const accessoriesOverlay = document.querySelector('.accessories-overlay');
+const accessoriesModal = document.querySelector('.accessories-modal');
+const accessoriesCross = accessoriesModal.querySelector('.cross');
+const accessoriesTitle = accessoriesModal.querySelector('h1');
+const accessoriesImage = accessoriesModal.querySelector('img');
+const accessoriesDescription = accessoriesModal.querySelector('p');
+
+function openAccessoryOverlay(item) {
+    accessoriesTitle.textContent = item.name;
+    accessoriesImage.src = item.image;
+    accessoriesImage.alt = item.name;
+    accessoriesDescription.textContent = item.description;
+    accessoriesOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeAccessoryOverlay() {
+    accessoriesOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function attachAccessoryEvents() {
+    document.querySelectorAll('.accessories-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const item = accessories.find(
+                acc => acc.searchName.toLowerCase() === button.id.toLowerCase()
+            );
+            if (item) {
+                openAccessoryOverlay(item);
+            }
+        });
+    });
+}
+
+accessoriesCross.addEventListener('click', closeAccessoryOverlay);
+
+accessoriesOverlay.addEventListener('click', (e) => {
+    if (!accessoriesModal.contains(e.target)) {
+        closeAccessoryOverlay();
+    }
+});
